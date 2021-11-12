@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Negocio;
 using Entidades.Cache;
 using TF_Grupo1.Presentacion.Gestor;
+using TF_Grupo1.Presentacion.EmpleadoVenta;
+using TF_Grupo1.Presentacion.Admin;
 
 namespace TF_Grupo1.Presentacion.Main
 {
@@ -37,11 +39,19 @@ namespace TF_Grupo1.Presentacion.Main
                                 frmPanelGestor.Show();
                                 frmPanelGestor.FormClosed += Logout;
                                 this.Hide();
-                                        break;
+                                break;
                                     case 2:
-                                        break;
+                                PanelEmpleado frmPanelEmpleado = new PanelEmpleado();
+                                frmPanelEmpleado.Show();
+                                frmPanelEmpleado.FormClosed += Logout;
+                                this.Hide();
+                                break;
                                     case 3:
-                                        break;
+                                frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador();
+                                frmPanelAdmin.Show();
+                                frmPanelAdmin.FormClosed += Logout;
+                                this.Hide();
+                                 break;
                                 }
                             }
                             else

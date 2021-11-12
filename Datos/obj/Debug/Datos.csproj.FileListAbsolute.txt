@@ -7,3 +7,6 @@ D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Gr
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\obj\Debug\Datos.dll
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\obj\Debug\Datos.pdb
+D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\bin\Debug\Entidades.dll
+D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\bin\Debug\Entidades.pdb
+D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\obj\Debug\Datos.csproj.CopyComplete

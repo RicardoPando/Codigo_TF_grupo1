@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TF_Grupo1.Presentacion.EmpleadoVenta
 {
-    public partial class GestionPlanCliente : Form
+    public partial class PanelEmpleado : Form
     {
-        public GestionPlanCliente()
+        public PanelEmpleado()
         {
             InitializeComponent();
         }
