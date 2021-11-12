@@ -10,9 +10,10 @@ namespace Negocio
     public class usuarioModel
     {
         usuarioDao usuarioDao = new usuarioDao();
-        public bool LoginUsuario(string user, string pass)
+        public bool LoginUsuario(int user, string pass)
         {
             return usuarioDao.Login(user, pass);
         }
+        
     }
 }

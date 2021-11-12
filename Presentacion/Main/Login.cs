@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Datos;
+using Negocio;
+using Entidades.Cache;
+using TF_Grupo1.Presentacion.Gestor;
 
 namespace TF_Grupo1.Presentacion.Main
 {
     public partial class Login : Form
     {
-        //private ConexionBD Conexion = new ConexionBD();
-        //private SqlCommand Comando = new SqlCommand();
         public Login()
         {
             InitializeComponent();
@@ -23,16 +22,45 @@ namespace TF_Grupo1.Presentacion.Main
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            //Comando.Connection = Conexion.AbrirConexion();
-            //Conexion.CerrarConexion();
-            //            InsertForm insertForm = new InsertForm();
-            //            insertForm.ShowDialog();
+            if (txtUsuario.Text != "")
+            {
+                        if (txtContraseña.Text != "")
+                        {
+                            usuarioModel user = new usuarioModel();
+                            var validLogin = user.LoginUsuario(Convert.ToInt32(txtUsuario.Text), txtContraseña.Text);
+                            if (validLogin == true)
+                            {
+                                switch (UsuarioLoginCache.tipo)
+                                {
+                                    case 1:
+                                PanelGestor frmPanelGestor = new PanelGestor();
+                                frmPanelGestor.Show();
+                                frmPanelGestor.FormClosed += Logout;
+                                this.Hide();
+                                        break;
+                                    case 2:
+                                        break;
+                                    case 3:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario o contraseña incorrecta . \n Intente otra vez");
+                                txtContraseña.Text = "";
+                                txtUsuario.Focus();
+                            }
+                        }
+                        else MessageBox.Show("Ingrese contraseña");
+                }
+            else MessageBox.Show("Ingrese Codigo de usuario");
         }
 
-        private void linkResgitrarUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Logout(object sender, FormClosedEventArgs e)
         {
-            frmRegistrarCliente frmRegistrarClienteForm = new frmRegistrarCliente();
-            frmRegistrarClienteForm.ShowDialog();
+            this.Show();
         }
+
+        }  
     }
-}
+

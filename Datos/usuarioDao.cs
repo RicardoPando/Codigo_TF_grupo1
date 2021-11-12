@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Entidades.Cache;
 
 /*
  using System.Text;
@@ -27,7 +28,7 @@ namespace Datos
 {
     public class usuarioDao : ConexionBD
     {
-        public bool Login(string user, string pass)
+        public bool Login(int user, string pass)
         {
             using (var connection = GetConnection())
             {
@@ -42,12 +43,23 @@ namespace Datos
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
+                        while (reader.Read())
+                        {
+                            UsuarioLoginCache.codigo = reader.GetInt32(0);
+                            UsuarioLoginCache.tipo = reader.GetInt32(2);
+                            UsuarioLoginCache.nombre = reader.GetString(3);
+                            UsuarioLoginCache.apellidoPaterno = reader.GetString(4);
+                            UsuarioLoginCache.apellidoMaterno = reader.GetString(5);
+                        }
                         return true;
                     }
                     else
                         return false;
                 }
             }
+
         }
+
+
     }
 }
