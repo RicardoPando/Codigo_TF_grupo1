@@ -36,7 +36,6 @@ namespace TF_Grupo1.Presentacion.Main
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkResgitrarUsuario = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -91,17 +90,6 @@ namespace TF_Grupo1.Presentacion.Main
             this.label3.TabIndex = 5;
             this.label3.Text = "Iniciar sesion";
             // 
-            // linkResgitrarUsuario
-            // 
-            this.linkResgitrarUsuario.AutoSize = true;
-            this.linkResgitrarUsuario.Location = new System.Drawing.Point(56, 180);
-            this.linkResgitrarUsuario.Name = "linkResgitrarUsuario";
-            this.linkResgitrarUsuario.Size = new System.Drawing.Size(188, 13);
-            this.linkResgitrarUsuario.TabIndex = 6;
-            this.linkResgitrarUsuario.TabStop = true;
-            this.linkResgitrarUsuario.Text = "¿Aún no te has registrado? (click aqui)";
-
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -117,7 +105,6 @@ namespace TF_Grupo1.Presentacion.Main
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 216);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.linkResgitrarUsuario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
@@ -140,7 +127,6 @@ namespace TF_Grupo1.Presentacion.Main
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkResgitrarUsuario;
         private System.Windows.Forms.Label label4;
     }
 }

@@ -13,5 +13,7 @@ namespace Entidades.Cache
         public static string nombre { get; set; }
         public static string apellidoPaterno { get; set; }
         public static string apellidoMaterno { get; set; }
+        public static string dni { get; set; }
+        public static string numeroCelular { get; set; }
     }
 }

@@ -1,0 +1,9 @@
+            @codigo         
+           ,@contraseña     
+           ,@IdTipo         
+           ,@nombre         
+           ,@apellidoPaterno
+           ,@apellidoMaterno
+           ,@dni            
+           ,@numeroCelular        
+      

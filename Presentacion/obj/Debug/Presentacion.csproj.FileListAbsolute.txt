@@ -7,7 +7,6 @@ D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Gr
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.EmpleadoVenta.frmRegistrarCliente.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Gestor.PanelGestor.resources
-D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Main.frmRegistrarCliente.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Main.Login.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
@@ -19,7 +18,6 @@ D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Gr
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\bin\Debug\Negocio.dll
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\bin\Debug\Entidades.pdb
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\bin\Debug\Negocio.pdb
-D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Admin.frmCrearUsuario.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Admin.frmPanelAdministrador.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.EmpleadoVenta.PanelEmpleado.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\Presentacion.Gestor.CrearPlan.resources
