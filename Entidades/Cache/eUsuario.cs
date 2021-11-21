@@ -8,14 +8,14 @@ namespace Entidades.Cache
 {
     public class eUsuario
     {
-        private static int codigo;
-        private static string contraseña;
-        private static int tipo;
-        private static string nombre;
-        private static string apellidoPaterno;
-        private static string apellidoMaterno;
-        private static string dni;
-        private static string numeroCelular;
+        private  int codigo;
+        private  string contraseña;
+        private  int tipo;
+        private  string nombre;
+        private  string apellidoPaterno;
+        private  string apellidoMaterno;
+        private  string dni;
+        private  string numeroCelular;
 
         public  int Codigo { get => codigo; set => codigo = value; }
         public  string Contraseña { get => contraseña; set => contraseña = value; }

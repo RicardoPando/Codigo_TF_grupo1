@@ -71,8 +71,63 @@ namespace Datos
             }
         }
 
+        public DataTable Listar()
+        {
+            DataTable tabla = new DataTable();
+            using (var connection =GetConnection())
+            {
+                connection.Open();
+                using (var command=new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select *from usuario order by codigo asc";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    tabla.Load(reader);
+                    reader.Close();
+                    return tabla;
+                }
+            }
+        }
 
-
+        public string EditarUsuario(string IdUsuario, eUsuario objUsuario)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "update usuario set codigo=@codigo,nombre=@nombre,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,numeroCelular=@numeroCelular where codigo=@codigo";
+                    command.Parameters.AddWithValue("@codigo", IdUsuario);
+                    command.Parameters.AddWithValue("@nombre", objUsuario.Nombre);
+                    command.Parameters.AddWithValue("@apellidoPaterno", objUsuario.ApellidoPaterno);
+                    command.Parameters.AddWithValue("@apellidoMaterno", objUsuario.ApellidoMaterno);
+                    command.Parameters.AddWithValue("@numeroCelular", objUsuario.NumeroCelular);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    return "Editar";
+                }
+            }
+        }
+        public string Eliminar(string idUsuario)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "delete from usuario where codigo = @codigo";
+                    command.Parameters.AddWithValue("@codigo", idUsuario);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    return "Eliminar";
+                }
+            }
+        }
 
 
     }

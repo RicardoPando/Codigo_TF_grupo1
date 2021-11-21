@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Cache\UsuarioLoginCache.cs" />
     <Compile Include="Cache\eUsuario.cs" />
+    <Compile Include="eCliente.cs" />
+    <Compile Include="ePlan.cs" />
+    <Compile Include="eVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

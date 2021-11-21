@@ -58,5 +58,10 @@ namespace TF_Grupo1.Presentacion.Admin
                 MessageBox.Show("Seleccione un tipo de usuario");
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
