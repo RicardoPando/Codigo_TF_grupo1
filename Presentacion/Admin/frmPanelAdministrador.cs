@@ -24,7 +24,6 @@ namespace TF_Grupo1.Presentacion.Admin
             cmbTipo.Text = "seleccione tipo";
             cmbFiltrarUser.Text = "seleccione tipo";
             SelectedIndex = false;
-            MessageBox.Show(cmbFiltrarUser.SelectedValue.ToString());
         }
         bool SelectedIndex;
         eUsuario objuser = new eUsuario();
@@ -122,7 +121,7 @@ namespace TF_Grupo1.Presentacion.Admin
             {
                 e.Handled = false;
             }
-            else if (Operacion == "Editar"&&((((char.IsNumber(e.KeyChar))) || (txtCodigo.Text.Length >= 8)) || (e.KeyChar == (char)Keys.Back)))
+            else if (/*Operacion == "Editar"&&*/((((char.IsNumber(e.KeyChar))) || (txtCodigo.Text.Length >= 8)) || (e.KeyChar == (char)Keys.Back)))
             {
                 e.Handled = true;
             }
@@ -270,8 +269,10 @@ namespace TF_Grupo1.Presentacion.Admin
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            NegocioUser.Listar();
+            SelectedIndex = false;
+            ListarUsuarios();
             cmbFiltrarUser.Text = "seleccione tipo";
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

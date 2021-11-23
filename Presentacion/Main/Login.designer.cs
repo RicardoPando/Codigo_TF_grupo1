@@ -70,6 +70,7 @@ namespace TF_Grupo1.Presentacion.Main
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
             this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // btnIngresar
             // 
