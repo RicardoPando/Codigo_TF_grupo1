@@ -12,6 +12,91 @@ namespace Datos
 {
     public class usuarioDao : ConexionBD
     {
+        public DataTable filtrarSegunIdTipo(int IdTipo)
+        {
+            DataTable Tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select *from usuario where IdTipo = @IdTipo order by codigo asc";
+                    command.Parameters.AddWithValue("@IdTipo", IdTipo);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader Leerfilas = command.ExecuteReader();
+                    Tabla.Load(Leerfilas);
+                    Leerfilas.Close();
+                    return Tabla;
+                }
+            }
+        }
+
+        public DataTable Listar()
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select *from usuario order by codigo asc";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    tabla.Load(reader);
+                    reader.Close();
+                    return tabla;
+                }
+            }
+        }
+
+
+
+        public DataTable ComboTipoUsuario()
+        {
+        DataTable Tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select *from Tipo order by Id";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader Leerfilas = command.ExecuteReader();
+                    Tabla.Load(Leerfilas);
+                    Leerfilas.Close();
+                    return Tabla;
+                }
+            }
+        }
+        string nombre;
+        public string NombreTipoUsuario(int IdTipoUsuario)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select *from Tipo where Id=@Id";
+                    command.Parameters.AddWithValue("@Id", IdTipoUsuario);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            nombre = reader.GetString(1);
+                        }
+                    }
+                }
+            }
+            return nombre;
+        }
+
+
         public bool Login(int user, string pass)
         {
             using (var connection = GetConnection())
@@ -34,8 +119,8 @@ namespace Datos
                             UsuarioLoginCache.nombre = reader.GetString(3);
                             UsuarioLoginCache.apellidoPaterno = reader.GetString(4);
                             UsuarioLoginCache.apellidoMaterno = reader.GetString(5);
-                            UsuarioLoginCache.dni = reader.GetString(6);
-                            UsuarioLoginCache.numeroCelular = reader.GetString(7);
+                            UsuarioLoginCache.dni = reader.GetInt32(6);
+                            UsuarioLoginCache.numeroCelular = reader.GetInt32(7);
 
                         }
                         return true;
@@ -46,7 +131,7 @@ namespace Datos
             }
 
         }
-        public string CrearUsuario(int codigo, string contraseña, int IdTipo , string nombre ,string apellidoPaterno, string apellidoMaterno, string dni , string numeroCelular )
+        public string CrearUsuario(int codigo, string contraseña, int IdTipo , string nombre ,string apellidoPaterno, string apellidoMaterno, int dni , string numeroCelular )
         {
             using (var connection = GetConnection())
             {
@@ -71,26 +156,9 @@ namespace Datos
             }
         }
 
-        public DataTable Listar()
-        {
-            DataTable tabla = new DataTable();
-            using (var connection =GetConnection())
-            {
-                connection.Open();
-                using (var command=new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = "select *from usuario order by codigo asc";
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    tabla.Load(reader);
-                    reader.Close();
-                    return tabla;
-                }
-            }
-        }
+        
 
-        public string EditarUsuario(string IdUsuario, eUsuario objUsuario)
+        public string EditarUsuario(int codigo, eUsuario objUsuario)
         {
             using (var connection = GetConnection())
             {
@@ -98,12 +166,15 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "update usuario set codigo=@codigo,nombre=@nombre,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,numeroCelular=@numeroCelular where codigo=@codigo";
-                    command.Parameters.AddWithValue("@codigo", IdUsuario);
-                    command.Parameters.AddWithValue("@nombre", objUsuario.Nombre);
+                    command.CommandText = "update usuario set nombre=@nombre,contraseña=@contraseña ,IdTipo=@IdTipo,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,numeroCelular=@numeroCelular where codigo=@codigo";
+                    command.Parameters.AddWithValue("@codigo", codigo);
+                    command.Parameters.AddWithValue("@contraseña     ", objUsuario.Contraseña);
+                    command.Parameters.AddWithValue("@IdTipo         ", objUsuario.Tipo);
+                    command.Parameters.AddWithValue("@nombre         ", objUsuario.Nombre);
                     command.Parameters.AddWithValue("@apellidoPaterno", objUsuario.ApellidoPaterno);
                     command.Parameters.AddWithValue("@apellidoMaterno", objUsuario.ApellidoMaterno);
-                    command.Parameters.AddWithValue("@numeroCelular", objUsuario.NumeroCelular);
+                    command.Parameters.AddWithValue("@dni            ", objUsuario.Dni);
+                    command.Parameters.AddWithValue("@numeroCelular  ", objUsuario.NumeroCelular);
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
@@ -111,7 +182,7 @@ namespace Datos
                 }
             }
         }
-        public string Eliminar(string idUsuario)
+        public string Eliminar(int idUsuario)
         {
             using (var connection = GetConnection())
             {

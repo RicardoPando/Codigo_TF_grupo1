@@ -22,3 +22,27 @@ D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Gr
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.EmpleadoVenta.PanelEmpleado.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\Presentacion.Gestor.CrearPlan.resources
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Gestor.GestionarPlan.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Admin.frmPanelAdministrador.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\TF_Grupo1.Presentacion.EmpleadoVenta.frmRegistrarCliente.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\TF_Grupo1.Presentacion.EmpleadoVenta.PanelEmpleado.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.Gestor.CrearPlan.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Gestor.GestionarPlan.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Gestor.PanelGestor.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\TF_Grupo1.Presentacion.Main.Login.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.exe
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.pdb
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Presentacion.exe.config
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Presentacion.exe
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Presentacion.pdb
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Entidades.dll
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Negocio.dll
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Datos.dll
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Entidades.pdb
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Negocio.pdb
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Datos.pdb
+D:\Desktop\AdminBranch\Presentacion\bin\Debug\Datos.dll.config
+D:\Desktop\AdminBranch\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete

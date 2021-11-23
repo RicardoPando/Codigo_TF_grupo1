@@ -10,3 +10,15 @@ D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Gr
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\bin\Debug\Entidades.dll
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\bin\Debug\Entidades.pdb
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Datos\obj\Debug\Datos.csproj.CopyComplete
+D:\Desktop\AdminBranch\Datos\bin\Debug\Datos.dll.config
+D:\Desktop\AdminBranch\Datos\bin\Debug\Datos.dll
+D:\Desktop\AdminBranch\Datos\bin\Debug\Datos.pdb
+D:\Desktop\AdminBranch\Datos\bin\Debug\Entidades.dll
+D:\Desktop\AdminBranch\Datos\bin\Debug\Entidades.pdb
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.Properties.Resources.resources
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.csproj.GenerateResource.cache
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.csproj.CopyComplete
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.dll
+D:\Desktop\AdminBranch\Datos\obj\Debug\Datos.pdb

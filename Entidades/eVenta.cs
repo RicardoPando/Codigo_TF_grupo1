@@ -20,11 +20,6 @@ namespace Entidades
 @codigoPlan  
         */
 
-
-
-
-
-
         public string CodigoVenta { get => codigoVenta; set => codigoVenta = value; }
         public int CodigoEmpleado { get => codigoEmpleado; set => codigoEmpleado = value; }
         public int DniCliente { get => dniCliente; set => dniCliente = value; }

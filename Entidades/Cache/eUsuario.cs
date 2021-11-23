@@ -14,7 +14,7 @@ namespace Entidades.Cache
         private  string nombre;
         private  string apellidoPaterno;
         private  string apellidoMaterno;
-        private  string dni;
+        private  int dni;
         private  string numeroCelular;
 
         public  int Codigo { get => codigo; set => codigo = value; }
@@ -23,7 +23,7 @@ namespace Entidades.Cache
         public  string Nombre { get => nombre; set => nombre = value; }
         public  string ApellidoPaterno { get => apellidoPaterno; set => apellidoPaterno = value; }
         public  string ApellidoMaterno { get => apellidoMaterno; set => apellidoMaterno = value; }
-        public  string Dni { get => dni; set => dni = value; }
+        public  int Dni { get => dni; set => dni = value; }
         public  string NumeroCelular { get => numeroCelular; set => numeroCelular = value; }
     }
 }

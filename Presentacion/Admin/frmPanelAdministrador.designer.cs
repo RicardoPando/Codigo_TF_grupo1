@@ -33,7 +33,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFiltrarUser = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,16 +53,18 @@ namespace TF_Grupo1.Presentacion.Admin
             this.label8 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbFiltrarUser);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -74,9 +76,9 @@ namespace TF_Grupo1.Presentacion.Admin
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 72);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 62);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(622, 255);
+            this.dataGridView1.Size = new System.Drawing.Size(623, 273);
             this.dataGridView1.TabIndex = 6;
             // 
             // label1
@@ -98,13 +100,16 @@ namespace TF_Grupo1.Presentacion.Admin
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // comboBox1
+            // cmbFiltrarUser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbFiltrarUser.FormattingEnabled = true;
+            this.cmbFiltrarUser.Location = new System.Drawing.Point(6, 34);
+            this.cmbFiltrarUser.Name = "cmbFiltrarUser";
+            this.cmbFiltrarUser.Size = new System.Drawing.Size(149, 21);
+            this.cmbFiltrarUser.TabIndex = 4;
+            this.cmbFiltrarUser.SelectedIndexChanged += new System.EventHandler(this.cmbFiltrarUser_SelectedIndexChanged);
+            this.cmbFiltrarUser.Click += new System.EventHandler(this.cmbFiltrarUser_Click);
+            this.cmbFiltrarUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbFiltrarUser_KeyPress);
             // 
             // btnEliminar
             // 
@@ -114,6 +119,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar Usuario";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtContraseña
             // 
@@ -121,6 +127,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
             this.txtContraseña.TabIndex = 49;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // label3
             // 
@@ -137,6 +144,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 47;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label2
             // 
@@ -153,6 +161,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtNumeroCelular.Name = "txtNumeroCelular";
             this.txtNumeroCelular.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroCelular.TabIndex = 45;
+            this.txtNumeroCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCelular_KeyPress);
             // 
             // label7
             // 
@@ -171,6 +180,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.btnCancelar.TabIndex = 43;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -188,6 +198,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(100, 20);
             this.txtDni.TabIndex = 41;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // label4
             // 
@@ -204,6 +215,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(100, 20);
             this.txtApellidoMaterno.TabIndex = 39;
+            this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
             // 
             // label5
             // 
@@ -220,6 +232,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(100, 20);
             this.txtApellidoPaterno.TabIndex = 37;
+            this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
             // 
             // label6
             // 
@@ -236,6 +249,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 35;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label8
             // 
@@ -259,6 +273,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(146, 21);
             this.cmbTipo.TabIndex = 33;
+            this.cmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipo_KeyPress);
             // 
             // label9
             // 
@@ -268,6 +283,16 @@ namespace TF_Grupo1.Presentacion.Admin
             this.label9.Size = new System.Drawing.Size(28, 13);
             this.label9.TabIndex = 32;
             this.label9.Text = "Tipo";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(178, 32);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // frmPanelAdministrador
             // 
@@ -295,6 +320,7 @@ namespace TF_Grupo1.Presentacion.Admin
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPanelAdministrador";
             this.Text = "Panel Administrador";
+            this.Load += new System.EventHandler(this.frmPanelAdministrador_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -306,7 +332,7 @@ namespace TF_Grupo1.Presentacion.Admin
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFiltrarUser;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtContraseña;
@@ -328,5 +354,6 @@ namespace TF_Grupo1.Presentacion.Admin
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

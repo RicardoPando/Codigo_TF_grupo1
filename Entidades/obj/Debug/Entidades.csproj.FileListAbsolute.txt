@@ -4,3 +4,9 @@ D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Gr
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Entidades\obj\Debug\Entidades.dll
 D:\Drive google\2021_02\3_Fundamentos_de_Sistemas_de_Informacion\TF_Grupo1\TF_Grupo1\Entidades\obj\Debug\Entidades.pdb
+D:\Desktop\AdminBranch\Entidades\bin\Debug\Entidades.dll
+D:\Desktop\AdminBranch\Entidades\bin\Debug\Entidades.pdb
+D:\Desktop\AdminBranch\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Desktop\AdminBranch\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Desktop\AdminBranch\Entidades\obj\Debug\Entidades.dll
+D:\Desktop\AdminBranch\Entidades\obj\Debug\Entidades.pdb
