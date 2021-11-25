@@ -16,5 +16,22 @@ namespace TF_Grupo1.Presentacion.Gestor
         {
             InitializeComponent();
         }
+
+        private void btnCrearPlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGestionar_Click(object sender, EventArgs e)
+        {
+            GestionarPlan frmGestionarPlan = new GestionarPlan();
+            frmGestionarPlan.Show();
+            frmGestionarPlan.FormClosed += Logout;
+            this.Hide();
+        }
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
     }
 }

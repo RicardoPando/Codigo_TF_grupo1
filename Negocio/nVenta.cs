@@ -13,6 +13,18 @@ namespace Negocio
 {
     public class nVenta
     {
-
+        dVenta VentaBD = new dVenta();
+        public string CrearVenta(eVenta objVenta)
+        {
+            return VentaBD.CrearVenta(objVenta);
+        }
+        public string EliminarPlanCliente(int codigo, int codigoPlan)
+        {
+            return VentaBD.EliminarPlanCliente(codigo, codigoPlan);
+        }
+        public DataTable ListarPlanCliente()
+        {
+            return VentaBD.ListarPlanCliente();
+        }
     }
 }

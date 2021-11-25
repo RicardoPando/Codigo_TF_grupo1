@@ -31,13 +31,12 @@ namespace TF_Grupo1.Presentacion.Gestor
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelGestor));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dGVPlan = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.btnGestionar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dGVEmpleados = new System.Windows.Forms.DataGridView();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -68,9 +67,10 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPlan)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -80,18 +80,24 @@ namespace TF_Grupo1.Presentacion.Gestor
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.dGVPlan);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnGestionar);
             this.groupBox1.Location = new System.Drawing.Point(7, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(180, 439);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Planes Existentes";
+            // 
+            // dGVPlan
+            // 
+            this.dGVPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVPlan.Location = new System.Drawing.Point(5, 57);
+            this.dGVPlan.Name = "dGVPlan";
+            this.dGVPlan.Size = new System.Drawing.Size(175, 318);
+            this.dGVPlan.TabIndex = 18;
             // 
             // label2
             // 
@@ -102,15 +108,6 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.label2.TabIndex = 16;
             this.label2.Text = "Tipo de Reporte";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(91, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -119,39 +116,22 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 15;
             // 
-            // listView1
+            // btnGestionar
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 55);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(180, 319);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(10, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Borrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(0, 45);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(493, 133);
-            this.listView2.TabIndex = 12;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.btnGestionar.Location = new System.Drawing.Point(40, 390);
+            this.btnGestionar.Name = "btnGestionar";
+            this.btnGestionar.Size = new System.Drawing.Size(95, 23);
+            this.btnGestionar.TabIndex = 8;
+            this.btnGestionar.Text = "Gestionar";
+            this.btnGestionar.UseVisualStyleBackColor = true;
+            this.btnGestionar.Click += new System.EventHandler(this.btnGestionar_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dGVEmpleados);
             this.groupBox2.Controls.Add(this.linkLabel2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.listView2);
             this.groupBox2.Location = new System.Drawing.Point(193, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(499, 184);
@@ -159,10 +139,18 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reporte Empleados";
             // 
+            // dGVEmpleados
+            // 
+            this.dGVEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVEmpleados.Location = new System.Drawing.Point(14, 45);
+            this.dGVEmpleados.Name = "dGVEmpleados";
+            this.dGVEmpleados.Size = new System.Drawing.Size(485, 139);
+            this.dGVEmpleados.TabIndex = 16;
+            // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(433, -5);
+            this.linkLabel2.Location = new System.Drawing.Point(431, 4);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(68, 13);
             this.linkLabel2.TabIndex = 15;
@@ -258,7 +246,7 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Location = new System.Drawing.Point(6, 125);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(225, 83);
+            this.groupBox6.Size = new System.Drawing.Size(235, 83);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Clientes";
@@ -455,15 +443,6 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.label6.TabIndex = 3;
             this.label6.Text = "Planes personalizados aprobados";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(46, 410);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Crear Plan";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // PanelGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,8 +456,10 @@ namespace TF_Grupo1.Presentacion.Gestor
             this.Text = "Panel Gestor de planes";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPlan)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -496,11 +477,7 @@ namespace TF_Grupo1.Presentacion.Gestor
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -532,6 +509,8 @@ namespace TF_Grupo1.Presentacion.Gestor
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dGVPlan;
+        private System.Windows.Forms.DataGridView dGVEmpleados;
+        private System.Windows.Forms.Button btnGestionar;
     }
 }

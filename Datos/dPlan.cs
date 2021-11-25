@@ -19,20 +19,27 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into Plan values (@codigo,@codigoGestor,@precio,@cantidadDatosMoviles,@beneficiosAdicionales,@serviciosIlimitados,@fechaInicio,@fechaFin)";
-                    command.Parameters.AddWithValue("@codigo;", objPlan.Codigo);
+                    command.CommandText = "insert into Plan values (@codigo,@nombre,@codigoGestor,@precio,@cantidadDatosMoviles,@beneficiosAdicionales,@fechaInicio,@fechaFin)";
+                    command.Parameters.AddWithValue("@codigo", objPlan.Codigo);
+                    command.Parameters.AddWithValue("@nombre", objPlan.Nombre);
                     command.Parameters.AddWithValue("@codigoGestor         ", objPlan.CodigoGestor);
                     command.Parameters.AddWithValue("@precio               ", objPlan.Precio             );
                     command.Parameters.AddWithValue("@cantidadDatosMoviles ", objPlan.CantidadDatosMoviles             );
-                    command.Parameters.AddWithValue("@beneficiosAdicionales", objPlan.BeneficiosAdicionales             );
-                    command.Parameters.AddWithValue("@serviciosIlimitados  ", objPlan.ServiciosIlimitados             );
+                    command.Parameters.AddWithValue("@beneficiosAdicionales", objPlan.Codigo);
                     command.Parameters.AddWithValue("@fechaInicio          ", objPlan.FechaInicio             );
                     command.Parameters.AddWithValue("@fechaFin             ", objPlan.FechaFin);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
+                    //command.CommandText = "insert into beneficioPlan values (@codigoPlan,@claroJuegos,@clubClaroApps,@controlAutomatico,@consumoAdicional)";
+                    //command.Parameters.AddWithValue("@codigoPlan", objPlan.Codigo);
+                    //    command.Parameters.AddWithValue("@claroJuegos      ",objPlan.ClaroJuegos);
+                    //command.Parameters.AddWithValue("@clubClaroApps    ", objPlan.ClubClaroApps);
+                    //command.Parameters.AddWithValue("@controlAutomatico", objPlan.ControlAutamatico);
+                    //command.Parameters.AddWithValue("@consumoAdicional ", objPlan.ConsumoAdicional);
+                    //command.ExecuteNonQuery();
+                    //command.Parameters.Clear();
                     return "Inserto";
                 }
-
             }
         }
 
@@ -45,7 +52,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select *from Plan order by codigo asc";
+                    command.CommandText = "SELECT        TOP (200) codigo, nombre, codigoGestor, precio, cantidadDatosMoviles, beneficiosAdicionales, fechaInicio, fechaFin FROM[plan]";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     tabla.Load(reader);
@@ -69,7 +76,6 @@ namespace Datos
                     command.Parameters.AddWithValue("@precio               ", objPlan.Precio);
                     command.Parameters.AddWithValue("@cantidadDatosMoviles ", objPlan.CantidadDatosMoviles);
                     command.Parameters.AddWithValue("@beneficiosAdicionales", objPlan.BeneficiosAdicionales);
-                    command.Parameters.AddWithValue("@serviciosIlimitados  ", objPlan.ServiciosIlimitados);
                     command.Parameters.AddWithValue("@fechaInicio          ", objPlan.FechaInicio);
                     command.Parameters.AddWithValue("@fechaFin             ", objPlan.FechaFin);
                     command.CommandType = CommandType.Text;

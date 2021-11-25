@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace TF_Grupo1.Presentacion.Gestor
 {
@@ -15,6 +16,12 @@ namespace TF_Grupo1.Presentacion.Gestor
         public GestionarPlan()
         {
             InitializeComponent();
+            //MessageBox.Show(CLBBeneficios.SelectedIndex.ToString());
+        }
+
+        private void CLBBeneficios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

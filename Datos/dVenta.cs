@@ -19,18 +19,41 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into Venta values (@dni,@nombre,@apellidoPaterno,@apellidoMaterno,@numeroCelular)";
+                    command.CommandText = "insert into Venta values (@codigoVenta,@codigoEmpleado,@dniCliente,@codigoPlan)";
                     command.Parameters.AddWithValue("@codigoVenta      ", objVenta.CodigoVenta);
                     command.Parameters.AddWithValue("@codigoEmpleado   ", objVenta.CodigoEmpleado);
                     command.Parameters.AddWithValue("@dniCliente       ", objVenta.DniCliente);
                     command.Parameters.AddWithValue("@codigoPlan     ", objVenta.CodigoPlan);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
+                    command.CommandText = "insert into PlanesCliente values (@dniCliente,@codigoPlan)";
+                    command.Parameters.AddWithValue("@dniCliente", objVenta.DniCliente);
+                    command.Parameters.AddWithValue("@codigoPlan", objVenta.CodigoPlan);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
                     return "Inserto";
                 }
 
             }
+            
         }
+        //public string NuevoPlanCliente(eVenta objVenta)
+        //{
+        //    using (var connection = GetConnection())
+        //    {
+        //        connection.Open();
+        //        using (var command = new SqlCommand())
+        //        {
+        //            command.Connection = connection;
+        //            command.CommandText = "insert into PlanesCliente values (@dniCliente,@codigoPlan)";
+        //            command.Parameters.AddWithValue("@dniCliente", objVenta.DniCliente);
+        //            command.Parameters.AddWithValue("@codigoPlan", objVenta.CodigoPlan);
+        //            command.ExecuteNonQuery();
+        //            command.Parameters.Clear();
+        //            return "Inserto";
+        //        }
+        //    }
+        //}
 
         public DataTable Listar()
         {
@@ -42,6 +65,24 @@ namespace Datos
                 {
                     command.Connection = connection;
                     command.CommandText = "select *from Venta order by dni asc";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    tabla.Load(reader);
+                    reader.Close();
+                    return tabla;
+                }
+            }
+        }
+        public DataTable ListarPlanCliente()
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select *from PlanesCliente order by dniCliente asc";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     tabla.Load(reader);
@@ -71,7 +112,7 @@ namespace Datos
                 }
             }
         }
-        public string Eliminar(string codigo)
+        public string EliminarPlanCliente(int codigo,int codigoPlan)
         {
             using (var connection = GetConnection())
             {
@@ -79,8 +120,9 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "delete from Venta where codigo = @codigo";
+                    command.CommandText = "delete from PlanesCliente where dniCliente = @dniCliente and codigoPlan=@codigoPlan";
                     command.Parameters.AddWithValue("@codigo", codigo);
+                    command.Parameters.AddWithValue("@codigoPlan", codigoPlan);
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
