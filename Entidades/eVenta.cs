@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class eVenta
     {
-        String  codigoVenta     ;
-        int     codigoEmpleado  ;
-        int     dniCliente      ;
-        int     codigoPlan      ;
+       public int  codigoVenta     ;
+       public int     codigoEmpleado  ;
+       public int     dniCliente      ;
+       public int     codigoPlan      ;
 
         /*
 @codigoVenta     
@@ -20,7 +20,7 @@ namespace Entidades
 @codigoPlan  
         */
 
-        public string CodigoVenta { get => codigoVenta; set => codigoVenta = value; }
+        public int CodigoVenta { get => codigoVenta; set => codigoVenta = value; }
         public int CodigoEmpleado { get => codigoEmpleado; set => codigoEmpleado = value; }
         public int DniCliente { get => dniCliente; set => dniCliente = value; }
         public int CodigoPlan { get => codigoPlan; set => codigoPlan = value; }

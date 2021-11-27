@@ -12,6 +12,9 @@ namespace Negocio
     public class nPlan
     {
         dPlan conPlan = new dPlan();
+
+       
+
         public string CrearPlan(ePlan objPlan)
         {
             return conPlan.CrearPlan(objPlan);
@@ -20,11 +23,11 @@ namespace Negocio
         {
             return conPlan.Listar();
         }
-        public string EditarPlan(string codigo, ePlan objPlan)
+        public string EditarPlan(int codigo, ePlan objPlan)
         {
             return conPlan.EditarPlan(codigo, objPlan);
         }
-        public string Eliminar(string codigo)
+        public string Eliminar(int codigo)
         {
             return conPlan.Eliminar(codigo);
         }

@@ -151,12 +151,83 @@ namespace Datos
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
+                    switch (IdTipo)
+                    {
+                        case 1:
+                            RegGestorPlan(codigo, IdTipo);
+                            break;
+                        case 2:
+                            RegEmpleadoVentas(codigo, IdTipo);
+                            break;
+                        case 3:
+                            RegAdmin(codigo, IdTipo);
+                            break;
+                    }
+
                     return "Inserto";
                 }
             }
         }
 
-        
+        private string RegGestorPlan (int codigo, int IdTipo)
+        {
+            using (var connection =GetConnection() )
+            {
+                connection.Open();
+                using (var command= new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "insert into gestorPlan values (@codigo,@IdTipo,0,0)";
+                    command.Parameters.AddWithValue("@codigo", codigo);
+                    command.Parameters.AddWithValue("@IdTipo", IdTipo);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    return "Inserto";
+                }
+            }
+        }
+
+        private string RegEmpleadoVentas(int codigo, int IdTipo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "insert into empleadoVentas values (@codigo,@IdTipo,0,0)";
+                    command.Parameters.AddWithValue("@codigo", codigo);
+                    command.Parameters.AddWithValue("@IdTipo", IdTipo);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    return "Inserto";
+                }
+            }
+        }
+
+        private string RegAdmin(int codigo, int IdTipo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "insert into admin values (@codigo,@IdTipo)";
+                    command.Parameters.AddWithValue("@codigo", codigo);
+                    command.Parameters.AddWithValue("@IdTipo", IdTipo);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    return "Inserto";
+                }
+            }
+        }
+
+
+
 
         public string EditarUsuario(int codigo, eUsuario objUsuario)
         {

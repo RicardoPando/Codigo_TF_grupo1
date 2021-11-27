@@ -21,31 +21,27 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
         }
         private void PanelEmpleado_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'empresaClaroDataSet1.plan' Puede moverla o quitarla según sea necesario.
-           // this.planTableAdapter.Fill(this.empresaClaroDataSet1.plan);
-            // TODO: esta línea de código carga datos en la tabla 'empresaClaroDataSet.plan' Puede moverla o quitarla según sea necesario.
-            //this.planTableAdapter.Fill(this.empresaClaroDataSet.plan);
             ListarPlanCliente();
-            ListarPlan          ();
+            dGVPlan.DataSource = negPlan.Listar();
             ListarClientes      ();
         }
 
-        bool ClienteSelec = false;
-        bool PlanSelec = false;
-        private void dGVCliente_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            lblClienteSelec.Text = dGVCliente.CurrentRow.Cells[0].ToString();
-            ClienteSelec = true;
-        }
-        private void dGVPlan_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            lblPlanSeleccionado.Text = dGVPlan.CurrentRow.Cells[0].ToString();
-            PlanSelec = true;
-        }
         eVenta Venta = new eVenta();
         nVenta negVenta = new nVenta();
         nPlan negPlan=new nPlan();
         nCliente negCliente =new nCliente()   ;
+        bool ClienteSelec = false;
+        bool PlanSelec = false;
+        private void dGVCliente_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            lblClienteSelec.Text = dGVCliente.CurrentRow.Cells[0].Value.ToString();
+            ClienteSelec = true;
+        }
+        private void dGVPlan_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            lblPlanSeleccionado.Text = dGVPlan.CurrentRow.Cells[0].Value.ToString();
+            PlanSelec = true;
+        }
 
         private void ListarPlanCliente()
         {
@@ -62,11 +58,14 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
         }
         private void btnDesuscribir_Click(object sender, EventArgs e)
         {
-            Venta.DniCliente = Convert.ToInt32(dGVPlanCliente.CurrentRow.Cells[0].ToString());
-            Venta.CodigoPlan = Convert.ToInt32(dGVPlanCliente.CurrentRow.Cells[1].ToString());
-            //
-            negVenta.EliminarPlanCliente(Venta.DniCliente,Venta.CodigoPlan);
-            ListarPlanCliente();
+            if (dGVPlanCliente.SelectedRows.Count>0)
+            {
+                int codigo = new int();
+                codigo = Convert.ToInt32(dGVPlanCliente.CurrentRow.Cells[0].Value);
+                negVenta.EliminarPlanCliente(codigo);
+                ListarPlanCliente();
+            }
+            else MessageBox.Show("Seleccione una fila para ELIMINAR UN PLAN DE UN CLIENTE");
         }
 
         private void btnInscribir_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             if (ClienteSelec==true&&PlanSelec==true)
             {
                 Random rnd = new Random();
-                Venta.CodigoVenta = rnd.Next(99999999, 999999999).ToString();
+                Venta.CodigoVenta = rnd.Next(99999999, 999999999);
                 Venta.CodigoEmpleado = Convert.ToInt32(UsuarioLoginCache.codigo);
                 Venta.DniCliente = Convert.ToInt32(lblClienteSelec.Text);
                 Venta.CodigoPlan = Convert.ToInt32(lblPlanSeleccionado.Text);
@@ -101,5 +100,7 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             this.Show();
             ListarClientes();
         }
+
+      
     }
 }

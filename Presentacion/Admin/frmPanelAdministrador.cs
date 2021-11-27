@@ -32,7 +32,7 @@ namespace TF_Grupo1.Presentacion.Admin
         {
             if (txtCodigo.Text != "" &&
             txtContraseña.Text != "" &&
-            cmbTipo.Text != "" &&
+            cmbTipo.Text != "seleccione tipo" &&
             txtNombre.Text != "" &&
             txtApellidoPaterno.Text != "" &&
             txtApellidoMaterno.Text != "" &&

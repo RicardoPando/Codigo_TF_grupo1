@@ -30,7 +30,6 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
         
         private void InitializeComponent()
         {
-            //EmpresaClaroDataSet1 dgvPlanes = new EmpresaClaroDataSet1();
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelEmpleado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,30 +42,19 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblPlanSeleccionado = new System.Windows.Forms.Label();
             this.lblClienteSelec = new System.Windows.Forms.Label();
-            this.dGVPlan = new System.Windows.Forms.DataGridView();
-            this.planBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.planBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.planBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dGVCliente = new System.Windows.Forms.DataGridView();
-            //this.empresaClaroDataSet1 = new EmpresaClaroDataSet1();
-            this.planBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-           //this.planTableAdapter = new Presentacion.EmpresaClaroDataSet1TableAdapters.planTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dGVPlan = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVPlanCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVPlan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCliente)).BeginInit();
-           // ((System.ComponentModel.ISupportInitialize)(this.empresaClaroDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -138,9 +126,9 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dGVPlan);
             this.groupBox2.Controls.Add(this.lblPlanSeleccionado);
             this.groupBox2.Controls.Add(this.lblClienteSelec);
-            this.groupBox2.Controls.Add(this.dGVPlan);
             this.groupBox2.Controls.Add(this.linkLabel2);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnInscribir);
@@ -154,7 +142,7 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             // lblPlanSeleccionado
             // 
             this.lblPlanSeleccionado.AutoSize = true;
-            this.lblPlanSeleccionado.Location = new System.Drawing.Point(223, 213);
+            this.lblPlanSeleccionado.Location = new System.Drawing.Point(232, 191);
             this.lblPlanSeleccionado.Name = "lblPlanSeleccionado";
             this.lblPlanSeleccionado.Size = new System.Drawing.Size(96, 13);
             this.lblPlanSeleccionado.TabIndex = 9;
@@ -163,35 +151,15 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             // lblClienteSelec
             // 
             this.lblClienteSelec.AutoSize = true;
-            this.lblClienteSelec.Location = new System.Drawing.Point(11, 213);
+            this.lblClienteSelec.Location = new System.Drawing.Point(11, 191);
             this.lblClienteSelec.Name = "lblClienteSelec";
             this.lblClienteSelec.Size = new System.Drawing.Size(107, 13);
             this.lblClienteSelec.TabIndex = 8;
             this.lblClienteSelec.Text = "Cliente Seleccionado";
             // 
-            // dGVPlan
+            // planBindingSource1
             // 
-            this.dGVPlan.AutoGenerateColumns = false;
-            this.dGVPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dGVPlan.DataSource = this.planBindingSource1;
-            this.dGVPlan.Location = new System.Drawing.Point(9, 46);
-            this.dGVPlan.Name = "dGVPlan";
-            this.dGVPlan.Size = new System.Drawing.Size(319, 129);
-            this.dGVPlan.TabIndex = 7;
-            this.dGVPlan.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVPlan_RowHeaderMouseClick);
-            // 
-            // planBindingSource
-            // 
-            this.planBindingSource.DataMember = "plan";
+            this.planBindingSource1.DataMember = "plan";
             // 
             // linkLabel2
             // 
@@ -212,6 +180,10 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             this.label2.TabIndex = 4;
             this.label2.Text = "Seleccione un plan ";
             // 
+            // planBindingSource
+            // 
+            this.planBindingSource.DataMember = "plan";
+            // 
             // dGVCliente
             // 
             this.dGVCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -221,67 +193,14 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             this.dGVCliente.TabIndex = 6;
             this.dGVCliente.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVCliente_RowHeaderMouseClick);
             // 
-            // empresaClaroDataSet1
+            // dGVPlan
             // 
-          // this.empresaClaroDataSet1.DataSetName = "EmpresaClaroDataSet1";
-          //  this.empresaClaroDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // planBindingSource1
-            // 
-            this.planBindingSource1.DataMember = "plan";
-           // this.planBindingSource1.DataSource = this.empresaClaroDataSet1;
-            // 
-            // planTableAdapter
-            // 
-           // this.planTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "codigo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "codigo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "codigoGestor";
-            this.dataGridViewTextBoxColumn3.HeaderText = "codigoGestor";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "precio";
-            this.dataGridViewTextBoxColumn4.HeaderText = "precio";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "cantidadDatosMoviles";
-            this.dataGridViewTextBoxColumn5.HeaderText = "cantidadDatosMoviles";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "beneficiosAdicionales";
-            this.dataGridViewTextBoxColumn6.HeaderText = "beneficiosAdicionales";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "fechaInicio";
-            this.dataGridViewTextBoxColumn7.HeaderText = "fechaInicio";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "fechaFin";
-            this.dataGridViewTextBoxColumn8.HeaderText = "fechaFin";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dGVPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVPlan.Location = new System.Drawing.Point(14, 36);
+            this.dGVPlan.Name = "dGVPlan";
+            this.dGVPlan.Size = new System.Drawing.Size(314, 149);
+            this.dGVPlan.TabIndex = 19;
+            this.dGVPlan.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dGVPlan_RowHeaderMouseClick);
             // 
             // PanelEmpleado
             // 
@@ -301,11 +220,10 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
             ((System.ComponentModel.ISupportInitialize)(this.dGVPlanCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVPlan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCliente)).EndInit();
-          //  ((System.ComponentModel.ISupportInitialize)(this.empresaClaroDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +239,6 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.DataGridView dGVPlanCliente;
-        private System.Windows.Forms.DataGridView dGVPlan;
         private System.Windows.Forms.DataGridView dGVCliente;
         private System.Windows.Forms.Label lblPlanSeleccionado;
         private System.Windows.Forms.Label lblClienteSelec;
@@ -348,5 +265,6 @@ namespace TF_Grupo1.Presentacion.EmpleadoVenta
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridView dGVPlan;
     }
 }
