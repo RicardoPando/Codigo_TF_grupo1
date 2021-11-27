@@ -18,9 +18,9 @@ namespace Negocio
         {
             return VentaBD.CrearVenta(objVenta);
         }
-        public string EliminarPlanCliente(int codigo, int codigoPlan)
+        public string EliminarPlanCliente(int codigo)
         {
-            return VentaBD.EliminarPlanCliente(codigo, codigoPlan);
+            return VentaBD.EliminarPlanCliente(codigo);
         }
         public DataTable ListarPlanCliente()
         {

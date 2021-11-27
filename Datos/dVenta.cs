@@ -26,34 +26,35 @@ namespace Datos
                     command.Parameters.AddWithValue("@codigoPlan     ", objVenta.CodigoPlan);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
-                    command.CommandText = "insert into PlanesCliente values (@dniCliente,@codigoPlan)";
-                    command.Parameters.AddWithValue("@dniCliente", objVenta.DniCliente);
-                    command.Parameters.AddWithValue("@codigoPlan", objVenta.CodigoPlan);
-                    command.ExecuteNonQuery();
-                    command.Parameters.Clear();
+                    CrearPlanCliente(objVenta.DniCliente, objVenta.CodigoPlan);
                     return "Inserto";
                 }
 
             }
             
         }
-        //public string NuevoPlanCliente(eVenta objVenta)
-        //{
-        //    using (var connection = GetConnection())
-        //    {
-        //        connection.Open();
-        //        using (var command = new SqlCommand())
-        //        {
-        //            command.Connection = connection;
-        //            command.CommandText = "insert into PlanesCliente values (@dniCliente,@codigoPlan)";
-        //            command.Parameters.AddWithValue("@dniCliente", objVenta.DniCliente);
-        //            command.Parameters.AddWithValue("@codigoPlan", objVenta.CodigoPlan);
-        //            command.ExecuteNonQuery();
-        //            command.Parameters.Clear();
-        //            return "Inserto";
-        //        }
-        //    }
-        //}
+
+        public string CrearPlanCliente(int dniCliente, int codigoPlan)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    Random rnd = new Random();
+                    command.Connection = connection;
+                    command.CommandText = "insert into PlanesCliente values (@codigo,@dniCliente,@codigoPlan)";
+                    command.Parameters.AddWithValue("@codigo",rnd.Next(99999999, 999999999));
+                    command.Parameters.AddWithValue("@dniCliente", dniCliente);
+                    command.Parameters.AddWithValue("@codigoPlan", codigoPlan);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    return "Inserto";
+                }
+
+            }
+        }
+
 
         public DataTable Listar()
         {
@@ -82,7 +83,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select *from PlanesCliente order by dniCliente asc";
+                    command.CommandText = "select *from PlanesCliente order by codigo asc";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     tabla.Load(reader);
@@ -112,7 +113,7 @@ namespace Datos
                 }
             }
         }
-        public string EliminarPlanCliente(int codigo,int codigoPlan)
+        public string EliminarPlanCliente(int codigo)
         {
             using (var connection = GetConnection())
             {
@@ -120,9 +121,8 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "delete from PlanesCliente where dniCliente = @dniCliente and codigoPlan=@codigoPlan";
+                    command.CommandText = "delete from PlanesCliente where codigo=@codigo";
                     command.Parameters.AddWithValue("@codigo", codigo);
-                    command.Parameters.AddWithValue("@codigoPlan", codigoPlan);
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
